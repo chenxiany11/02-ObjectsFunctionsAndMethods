@@ -268,7 +268,43 @@ def try_methods_and_functions():
     ###########################################################################
 
 
-# -----------------------------------------------------------------------------
+def draw_many_squares():
+    turtle5 = rg.SimpleTurtle()
+    turtle5.pen = rg.Pen('blue', 5)
+
+    turtle5.backward(150)
+
+    turtle5.speed = 1
+    turtle5.draw_square(100)
+    turtle5.left(30)
+    turtle5.draw_square(100)
+
+    turtle5.speed = 5
+    turtle5.pen = rg. Pen('red', 5)
+
+    i = 0
+    for i < 10:
+        turtle5.draw_square(50)
+        turtle5.right(15)
+        i = i + 1
+        return
+
+    turtle5.speed = 100
+    turtle5.pen = rg.Pen('red', 35)
+    i = 0
+    for i < 8:
+        turtle5.draw_square(300)
+        turtle5.right(60)
+        i = i + 1
+        return
+
+    turtle5.pen = rg.Pen('black', 3)
+    turtle5.backward(200)
+    turtle5.draw_circle(30)
+    turtle5.draw_square(50)
+
+    
+    # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
 
