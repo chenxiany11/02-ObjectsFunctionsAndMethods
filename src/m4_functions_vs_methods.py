@@ -4,12 +4,12 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Amanda Stouder,
-         their colleagues and Vibha Alangar.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Xianying Chen.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 # Part 1:  CONSTRUCTING objects, applying ** METHODS ** to them:
@@ -81,7 +81,11 @@ def main():
     turtle = rg.SimpleTurtle('square')
     draw_many_squares(turtle, 3, 75, 15)
 
-    turtle3()
+    turtle3('yellow', 10)
+    try_methods()
+    try_functions(maja, 200, 100, 300, 30)
+    try_functions(name, 100, 200, 0, 0)
+    try_functions(name, -50, 50, 100, 100)
 
     ###########################################################################
     # When the TODOs ask you to test YOUR code, put YOUR tests below this:
@@ -180,13 +184,20 @@ def try_methods():
       -- forward    50 units
       -- backward  100 units
     """
+    turtle = rg.SimpleTurtle()
+    turtle.pen = rg.Pen('brown', 5)
+    turtle.forward(150)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.backward(100)
+
     ###########################################################################
-    # TODO: 3. Implement and test this function, per its doc-string above.
+    # DONE: 3. Implement and test this function, per its doc-string above.
     #     (To test it, put a statement in   main   that calls this function.)
     ###########################################################################
 
 
-def try_functions():
+def try_functions(name, x1, y1, x2, y2):
     # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
     """
     Causes several SimpleTurtles to do the following:
@@ -194,6 +205,13 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
+
+    name.pen_up()
+    name.go_to(rg.Point(x1, y1))
+
+    name.pen_down()
+    name.go_to(rg.Point(x2, y2))
+
     ###########################################################################
     # TODO: 4. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
