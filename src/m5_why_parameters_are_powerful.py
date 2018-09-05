@@ -22,8 +22,12 @@ def main():
     # draw_circles(rg.Point(100, 50))
     # draw_circles(rg.Point(-200, 0))
 
-    better_draw_circles(rg.Point(10, 50), 7)
-    better_draw_circles(rg.Point(100, 50), 10)
+    # better_draw_circles(rg.Point(10, 50), 7)
+    # better_draw_circles(rg.Point(100, 50), 10)
+
+    even_better_draw_circles(rg.Point(10, 50), 10, 7, 'black', 5)
+    even_better_draw_circles(rg.Point(100, 5), 8, 3, 'blue', 10)
+    even_better_draw_circles(rg.Point(20, -10), 5, 10, 'yellow', 5)
 
     window.update()
     window.close_on_mouse_click()
@@ -148,7 +152,7 @@ def better_draw_circles(point, value):
 
 ###############################################################################
 #
-# TODO: 4a.
+# DONE: 4a.
 #   In the previous _TODO_, you made a MORE POWERFUL version
 #   of   draw_circles   by introducing a PARAMETER for the amount
 #   by which the radii of the concentric circles increase.
@@ -170,7 +174,7 @@ def better_draw_circles(point, value):
 #   to the body of the   even_better_draw_circles   function defined below.
 #   Then add parameters and modify the code to make them work!
 #
-# TODO: 4b.
+# DONE: 4b.
 #   In   main  at the place indicated, comment-out the existing calls
 #   to  better_draw_circles  and add at least two calls to the improved
 #   even_better_draw_circles  function, to TEST that your modified code is
@@ -188,7 +192,7 @@ def even_better_draw_circles(point, value, number, color, thickness):
     turtle.pen = rg.Pen(color, thickness)
     turtle.set_heading(0)  # Point "east" (towards the right)
 
-    for k in range(1, 11):  # k becomes 1, 2, 3, ... 10
+    for k in range(1, number):  # k becomes 1, 2, 3, ... 10
 
         turtle.pen_up()
 
@@ -201,7 +205,7 @@ def even_better_draw_circles(point, value, number, color, thickness):
         turtle.draw_circle(value * k)
 
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #
 # Finally, comment-out the existing calls to  even_better_draw_circles  and
 # add code in   main  to draw various circles that form a BEAUTIFUL picture!
