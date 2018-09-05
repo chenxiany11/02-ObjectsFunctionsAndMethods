@@ -83,9 +83,8 @@ def main():
 
     turtle3('yellow', 10)
     try_methods()
-    try_functions(maja, 200, 100, 300, 30)
-    try_functions(name, 100, 200, 0, 0)
-    try_functions(name, -50, 50, 100, 100)
+    try_functions()
+    try_methods_and_functions()
 
     ###########################################################################
     # When the TODOs ask you to test YOUR code, put YOUR tests below this:
@@ -197,7 +196,7 @@ def try_methods():
     ###########################################################################
 
 
-def try_functions(name, x1, y1, x2, y2):
+def try_functions():
     # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
     """
     Causes several SimpleTurtles to do the following:
@@ -206,14 +205,8 @@ def try_functions(name, x1, y1, x2, y2):
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
 
-    name.pen_up()
-    name.go_to(rg.Point(x1, y1))
-
-    name.pen_down()
-    name.go_to(rg.Point(x2, y2))
-
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #    NOTE: This function requires
@@ -222,9 +215,9 @@ def try_functions(name, x1, y1, x2, y2):
     #    HINT: see   jump_and_move_turtle   above.
     #
     ###########################################################################
-
-
-draw_many_squares()
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
 
 
 def try_methods_and_functions():
@@ -260,8 +253,26 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+
+    turtle5 = rg.SimpleTurtle()
+    turtle5.pen = rg.Pen('blue', 5)
+    turtle5.backward(150)
+
+    turtle5.speed = 1
+    draw_many_squares(turtle5, 2, 100, 30)
+
+    turtle5.speed = 5
+    turtle5.pen = rg.Pen('red', 5)
+    draw_many_squares(turtle5, 10, 50, 15)
+    draw_many_squares(turtle5, 8, 300, 60)
+
+    turtle5.pen = rg.Pen('black', 3)
+    turtle5.backward(200)
+    turtle5.draw_circle(30)
+    turtle5.draw_square(50)
+
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #   NOTE: This function should ** CALL ** the
@@ -269,43 +280,6 @@ def try_methods_and_functions():
     #   function defined above.  If you don't see why, ** ASK FOR HELP. **
     #
     ###########################################################################
-
-
-def draw_many_squares():
-    turtle5 = rg.SimpleTurtle()
-    turtle5.pen = rg.Pen('blue', 5)
-
-    turtle5.backward(150)
-
-    turtle5.speed = 1
-    turtle5.draw_square(100)
-    turtle5.left(30)
-    turtle5.draw_square(100)
-
-    turtle5.speed = 5
-    turtle5.pen = rg. Pen('red', 5)
-
-    for i in range(0, 10):
-        i = 0
-        turtle5.draw_square(50)
-        turtle5.right(15)
-        i = i + 1
-        return i
-
-    turtle5.speed = 100
-    turtle5.pen = rg.Pen('red', 35)
-
-    for i in range(0, 8):
-        i = 0
-        turtle5.draw_square(300)
-        turtle5.right(60)
-        i = i + 1
-        return i
-
-    turtle5.pen = rg.Pen('black', 3)
-    turtle5.backward(200)
-    turtle5.draw_circle(30)
-    turtle5.draw_square(50)
 
     # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
